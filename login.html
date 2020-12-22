@@ -1,0 +1,633 @@
+<html>
+    <head>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+            .glyphicon-remove {
+  color: red;
+}
+
+.glyphicon-ok {
+  color: green;
+}* {
+            padding: 0;
+            margin: 0;
+            /*box-size:border-box;*/
+        }
+        body {
+            
+        }
+        #container {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 10%;
+            margin-left:10%;
+        }
+        .tabs {
+            display: table-cell;
+            width: 30%;
+            background-color: rgba(11, 177, 224, 0.82);
+            padding: 10px;
+            float: left;
+            text-align: center;
+            vertical-align: middle;
+            border: 2px solid #ffffff;
+            border-bottom: 0px;
+            position: relative;
+            font-size: 1.3em;
+            color: #ffffff;
+        }
+        .tabs:hover, p{
+            cursor: pointer;
+        }
+
+        #lt {
+            background-color: rgb(12, 132, 189);
+        }
+        #cont {
+            width: 80%;
+            height: 70%;
+           background:#e9e0e0;
+           box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            border: 1px solid green;
+        }
+
+        input{
+            
+            width: 350px;
+            margin: 10px 13px;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 0.8em;
+            color: rgba(14, 19, 20, 0.82);
+         
+           
+        }
+
+   
+        
+input {
+  background: transparent;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: rgb(3, 3, 19)
+}
+
+input:focus {
+  border-color: rgb(52, 50, 192)
+}
+        input[type="submit"] {
+            width: auto;
+            color: #6e6e6e;
+        }
+
+        #clear {
+            clear: both;
+        }
+
+        .comm {
+            margin-left:3%;
+            position: absolute;
+            visibility: hidden;
+        }
+        #login {
+            visibility: visible;
+            margin-top:2%;
+            margin-left:4%;
+        }
+
+    
+      
+        h3 {
+            margin-top: 10%;
+            margin-bottom: 5%; 
+text-align: center;}
+
+       
+
+        #forgot div {
+            margin-top: 30px;
+        }
+        p {
+            padding: 10px 15px;
+            font-size: 1em;
+            color: black;
+        }
+        .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius:5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.butonGoogle {
+  background-color: white; /* Green */
+  border: none;
+  border-radius:5px;
+  color: #4CAF50;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button1 {float:right;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+        
+        /*#footer {
+            width: 300px;
+            margin: 10px auto;
+            text-align: center;
+            color: rgba(9, 118, 155, 0.91);
+
+        }*/
+        /*#footer {
+            width: 300px;
+            margin: 10px auto;
+            text-align: center;
+            color: rgba(9, 118, 155, 0.91);
+
+        }*/
+        body,html{
+  width:100%;
+  height: 100%;
+}
+body{
+  margin:0;
+  padding:0;
+}
+.bubbles{
+  position:absolute;
+  width:100%;
+  height: 100%;
+  z-index:0;
+  overflow:hidden;
+  top:0;
+  left:0;
+}
+.bubble{
+  position: absolute;
+  bottom:-100px;
+  width:40px;
+  height: 40px;
+  background:#f1f1f1;
+  border-radius:50%;
+  opacity:0.5;
+  animation: rise 10s infinite ease-in;
+}
+.bubble:nth-child(1){
+  width:40px;
+  height:40px;
+  left:10%;
+  animation-duration:8s;
+}
+.bubble:nth-child(2){
+  width:20px;
+  height:20px;
+  left:20%;
+  animation-duration:5s;
+  animation-delay:1s;
+}
+.bubble:nth-child(3){
+  width:50px;
+  height:50px;
+  left:35%;
+  animation-duration:7s;
+  animation-delay:2s;
+}
+.bubble:nth-child(4){
+  width:80px;
+  height:80px;
+  left:50%;
+  animation-duration:11s;
+  animation-delay:0s;
+}
+.bubble:nth-child(5){
+  width:35px;
+  height:35px;
+  left:55%;
+  animation-duration:6s;
+  animation-delay:1s;
+}
+.bubble:nth-child(6){
+  width:45px;
+  height:45px;
+  left:65%;
+  animation-duration:8s;
+  animation-delay:3s;
+}
+.bubble:nth-child(7){
+  width:90px;
+  height:90px;
+  left:70%;
+  animation-duration:12s;
+  animation-delay:2s;
+}
+.bubble:nth-child(8){
+  width:25px;
+  height:25px;
+  left:80%;
+  animation-duration:6s;
+  animation-delay:2s;
+}
+.bubble:nth-child(9){
+  width:15px;
+  height:15px;
+  left:70%;
+  animation-duration:5s;
+  animation-delay:1s;
+}
+.bubble:nth-child(10){
+  width:90px;
+  height:90px;
+  left:25%;
+  animation-duration:10s;
+  animation-delay:4s;
+}
+@keyframes rise{
+  0%{
+    bottom:-100px;
+    transform:translateX(0);
+  }
+  50%{
+    transform:translate(100px);
+  }
+  100%{
+    bottom:1080px;
+    transform:translateX(-200px);
+  }
+}
+
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+    </style>
+
+        </head><body>
+            <div style="width:80%;height:450px;display:flex;margin:auto;padding:10%;" id="bigContainer">  
+                <div style="flex:2;background-color:green;border-top-left-radius: 90px;">
+                
+                    <div class="bubbles">
+                        <div class="bubble"></div>
+                      <div class="bubble"></div>
+                      <div class="bubble"></div>
+                      <div class="bubble"></div>
+                      <div class="bubble"></div>
+                      <div class="bubble"></div>
+                      <div class="bubble"></div>
+                      <div class="bubble"></div>
+                      <div class="bubble"></div>
+                      <div class="bubble"></div>
+                      
+                    </div>
+                    <div class="register-left"><img style="width:100px;height:100px;border-radius: 50px;margin-top:30%;margin-left:40%;" src="https://dashboard.amara.ai/img/image.931dee43.png"/>
+                    </div>
+                    <div style="width:100px;height:100px;color:white;font-size: larger2em;font-weight: bold; font-family:'Courier New', Courier, monospace;margin-top:2%;margin-left:42%;" >Login to Dashboard</div>
+                
+                  <div class="register-left"style="cursor: pointer;" id="fromGoogle" onclick="fromGoogle()"  ><span class="butonGoogle" style="margin-top:-3%;margin-left:38%;" >
+                        <i class="fa fa-google" style="color:#4CAF50;"></i>&nbsp;Login </span></div>
+                 
+                </div>
+
+
+
+
+                <div style="flex:3;border:1px solid green;background-color: rgb(219, 212, 212); ">
+                    <div id='container'>
+                        <div id='cont'>
+                            <div id="login" class="comm">
+                                <h3>Login</h3>
+                                <div 
+                                >
+                                <span id="error2" style="font-size:.8em;margin-left:7%;color:red" > </span> 
+
+                                    <div style="display:flex;">
+                                        <span  ><i style="margin-top:50%;" class="fa fa-envelope-o fa-fw"></i></span>
+                                        <input id="se"  type="text" placeholder="Email Id">
+                                        
+                                      </div> 
+                                      <span id="error" style="font-size:.8em;margin-left:7%;color:red" > </span> 
+<br>
+                                      <div style="display:flex;">
+                                        <span ><i style="margin-top:50%;" class="fa fa-key fa-fw"></i></span>
+                                        <input id="sp"  type="password" placeholder="Password"> <i style="    margin-left: -10%;
+                                        margin-top: 1%;" class="fa fa-eye" id="togglePassword"></i>
+                                      </div> 
+                                      <span id="error1" style="font-size:.8em;margin-left:7%;color:red" > </span> 
+
+                                </div>
+                               <div >   <p onclick="forTabFun()" style=" float:left;">Forget Password?</p>
+                                <button type="submit" class="button" style=" float:right;" onclick="login()" value="Login">Login</button>
+                            </div>
+                                
+                            </div>
+                            
+                            
+                            <div id="forgot" class="comm">
+                            <h3>Forgot Password</h3>
+                            <div style="display:flex;">
+                                <span  ><i style="margin-top:50%;" class="fa fa-envelope-o fa-fw"></i></span>
+                                <input id="fe"  type="text" placeholder="Email Id">
+                                
+                              </div> 
+                            
+                        
+                                    <span id="error3" style="font-size:.8em;margin-left:7%;color:red" > </span> 
+<div>
+                             
+                                <button type="submit" class="button" style="float:left" onclick="loginTabFun()" value="Login">Login</button>
+                                <button type="submit"  class="button"style="float:right" onclick="forgot()" value="Submit">Submit</button>
+                                </div>
+                           
+                            </div>
+                            <div id="setforgot" class="comm">
+                                <h3>set Password</h3>
+                                <div>
+                                    <div class="form-group has-feedback">
+                                        <div style="display:flex;">
+                                            <span ><i style="margin-top:50%;" class="fa fa-key fa-fw"></i></span>
+                                            <input id="NewPassword"  type="password" placeholder="Password"> <i style="    margin-left: -10%;
+                                            margin-top: 1%;" class="fa fa-eye" id="togglePassword1"></i>
+                                          </div> 
+                                      
+                                       
+                                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                      </div>
+                                      <div id="Length" class="glyphicon glyphicon-remove">Must be at least 7 charcters</div>
+                                      <div id="UpperCase" class="glyphicon glyphicon-remove">Must have atleast 1 upper case character</div>
+                                      <div id="LowerCase" class="glyphicon glyphicon-remove">Must have atleast 1 lower case character</div>
+                                      <div id="Numbers" class="glyphicon glyphicon-remove">Must have atleast 1 numeric character</div>
+                                      <div id="Symbols" class="glyphicon glyphicon-remove">Must have atleast 1 special character</div>
+        
+        <div style="float:right">
+                                    <button type="submit" class="button" onclick="storepass()" value="Set">Set</button></div>
+                                </div>
+                                
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--<div id="footer">
+                <h2>By. Mansoor Amin </br> Roll No. 1941</h2>
+        
+            </div>-->
+            <script>var emailArray=[{"email":"mary@gmail.com","password":"Aaa@123"},
+                {"email":"jini@gmail.com","password":"Bbb@123"},
+                {"email":"albert@gmail.com","password":"Ccc@123"}
+                ];
+                
+var passwordArray=[];
+var count=0;
+var setemailCount=0;
+var correctmail=-1;
+var loginBox = document.getElementById("login");
+
+var forgetBox = document.getElementById("forgot");
+var setBox = document.getElementById("setforgot");
+
+
+
+
+function loginTabFun(){
+    event.preventDefault();
+
+    loginBox.style.visibility="visible";
+    forgetBox.style.visibility="hidden";
+    setBox.style.visibility="hidden";
+}
+function forTabFun(){
+    event.preventDefault();
+
+    loginBox.style.visibility="hidden";
+    forgetBox.style.visibility="visible";
+    setBox.style.visibility="hidden";
+
+}
+
+
+function setpassforgot(){
+    event.preventDefault();
+
+    loginBox.style.visibility="hidden";
+    forgetBox.style.visibility="hidden";
+    setBox.style.visibility="visible";
+
+}
+
+function fromGoogle(){
+    window.location = "dashboard.html";
+}
+function login(){
+
+   
+    var email = document.getElementById("se").value;
+    var password = document.getElementById("sp").value;
+    var error1 = document.getElementById("error1"); 
+    var error = document.getElementById("error");
+    var error2 = document.getElementById("error2"); 
+    var error3 = document.getElementById("error3"); 
+    
+ if(emailArray.find(item => ((item.email === email) && (item.password === password)))){
+    
+               window.location = "dashboard.html";
+               
+        error.textContent = "" ;
+        error1.textContent = "" ;
+        error2.textContent = "" ;
+        error3.textContent = "" ;
+                      
+    }
+    else{
+        if( count<3){
+            if (emailArray.find(item =>(((email == "")&&(password == ""))||((item.email !== email)&&(password !== item.password))))){
+                error.textContent = "Please enter a a valid Mail id" ;
+        error1.textContent = "Please enter a password" ;
+        count++;
+            }
+            else if(emailArray.find(item => ((item.email === email)||(password == "")))){
+   
+                console.log(count+"aa"+error1);
+                document.getElementById("error1").textContent = "Please enter a valid password" ;
+           
+    
+    count++;
+    } 
+    else if(emailArray.find(item => ((item.password === password) ||(email == "")))){
+   
+        console.log(count+"bb");
+            error.textContent = "Please enter a a valid Mail id" ;
+ 
+        
+    count++;
+    }
+    else{
+        console.log(count+"cc");
+        error.textContent = "Please enter a a valid Mail id" ;
+        count++;
+
+    }
+}
+
+    else {
+    error2.textContent = "You exceeds your try. Please try after sometimes" ;
+    }
+}
+        document.getElementById("se").value ="";
+        document.getElementById("sp").value="";
+     
+}
+function forgot(){
+event.preventDefault();
+var email = document.getElementById("fe").value;
+
+if(emailArray.find(item => (item.email === email))){
+    correctmail=emailArray.findIndex(item => (item.email === email));
+loginBox.style.visibility="hidden";
+forgetBox.style.visibility="hidden";
+setBox.style.visibility="visible";             
+}
+else{
+
+    if(setemailCount<3){
+        console.log(setemailCount);
+        error3.textContent = "Please enter a a valid Mail id" ;
+    setemailCount++;
+    }
+    else 
+    error3.textContent = "You exceeds your try. Please try after sometimes" ;
+   
+}
+
+
+document.getElementById("fe").value ="";
+}
+function clearAll(){
+
+    var error1 = document.getElementById("error1"); 
+    var error = document.getElementById("error");
+    var error2 = document.getElementById("error2"); 
+    var error3 = document.getElementById("error3"); 
+    error.textContent = "" ;
+        error1.textContent = "" ;
+        error2.textContent = "" ;
+        
+        error3.textContent = "" ;
+
+}
+function storepass(){
+    var passw=   /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,20}$/;
+
+
+    var pass = document.getElementById("NewPassword").value;
+    if(pass.match(passw)) {
+    correctmail;
+    emailArray[correctmail].password=pass;
+    loginTabFun();}
+}
+    /*Actual validation function*/
+    function ValidatePassword() {
+  /*Array of rules and the information target*/
+  var rules = [{
+      Pattern: "[A-Z]",
+      Target: "UpperCase"
+    },
+    {
+      Pattern: "[a-z]",
+      Target: "LowerCase"
+    },
+    {
+      Pattern: "[0-9]",
+      Target: "Numbers"
+    },
+    {
+      Pattern: "[!@@#$%^&*]",
+      Target: "Symbols"
+    }
+  ];
+
+  //Just grab the password once
+  var password = $(this).val();
+
+  /*Length Check, add and remove class could be chained*/
+  /*I've left them seperate here so you can see what is going on */
+  /*Note the Ternary operators ? : to select the classes*/
+  $("#Length").removeClass(password.length > 6 ? "glyphicon-remove" : "glyphicon-ok");
+  $("#Length").addClass(password.length > 6 ? "glyphicon-ok" : "glyphicon-remove");
+  
+  /*Iterate our remaining rules. The logic is the same as for Length*/
+  for (var i = 0; i < rules.length; i++) {
+
+    $("#" + rules[i].Target).removeClass(new RegExp(rules[i].Pattern).test(password) ? "glyphicon-remove" : "glyphicon-ok"); 
+    $("#" + rules[i].Target).addClass(new RegExp(rules[i].Pattern).test(password) ? "glyphicon-ok" : "glyphicon-remove");
+      }
+    }
+    
+    /*Bind our event to key up for the field. It doesn't matter if it's delete or not*/
+    $(document).ready(function() {
+      $("#NewPassword").on('keyup', ValidatePassword)
+    });
+    $(document).ready(function() {
+      $("input").on('focus', clearAll)
+    });
+   
+
+    
+
+    const togglePassword1 = document.querySelector('#togglePassword1');
+
+togglePassword1.addEventListener('click', function (e) {
+    const password = document.querySelector('#NewPassword');
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+
+
+
+    const togglePassword = document.querySelector('#togglePassword');
+
+togglePassword.addEventListener('click', function (e) {
+    const password = document.querySelector('#sp');
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <title>React App</title>
+    <script data-require="d3@*" data-semver="3.2.2" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript" src="http://www.ok-soft-gmbh.com/jqGrid/jquery.jqGrid-3.8.2/js/i18n/grid.locale-en.js"></script>
+    <script type="text/javascript" src="http://www.ok-soft-gmbh.com/jqGrid/jquery.jqGrid-3.8.2/js/jquery.jqGrid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/redmond/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.ok-soft-gmbh.com/jqGrid/jquery.jqGrid-3.8.2/css/ui.jqgrid.css" />
+    <link rel="stylesheet" type="text/css" href="dashboardStyle.css">
+    
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root1">
+      <h4 style="text-align: center;"> Assignment Dashboard</h4>
+     
+      
+      
+
+
+      
+      <table style="width:100%;height:auto;">
+        <tr style="width:100%;height:100px;"><td style="width:100%;height:100%;">
+          <table style="width:100%;height:100%;"><tr style="width:100%;height:100%;">
+       <td style="width:20%;height:100%;"><span style="height:20px;text-align:center;font-family: Arial, Helvetica, sans-serif;">Comment Analysis</span>
+        <div id="containerGauge" style="width:100%;height:120px;">
+        </div></td>
+       <td style="width:40%;height:100px;">
+        <div class="containerBox" style="width:100%; height:80px;">
+            <div class="oneborder" style="height:60px;margin"><span class="val" style="color:#b80f55;">243</span><br>
+                <span class="head" style="margin-left:5px;"
+                >Total Posts</span></div>
+                    <div><span class="val" style="color:#08cfd6;margin-left:5px;" >0.12</span><br>
+                <span class="head"
+                 >Dailty Post</span></div>
+                    <div><span style="color:rgb(250, 77, 8);" class="val" >2,332</span><br>
+                <span class="head"
+                 >Total Reactions</span></div>
+                    <div><span style="color:rgb(46, 187, 65);" class="val" >18.32</span><br>
+                <span class="head"
+                >Reactions per Post</span></div></div></td>  
+                  <td style="width:40%;height:80px;">
+            <div class="containerBoxTwo" style="width:100%; height:80px;">
+                <div class="twoborder" style="height:60px;"><span class="val" style="color:orange;"><i class="fa fa-thumbs-up"></i>
+                </span><br>
+                    <span class="head" 
+                    >LIKE</span></div>
+                    
+                        <div class="twoborder"><span class="val" style="color:green;" ><i class="fa fa-gratipay"></i> </span><br>
+                    <span class="head"
+                     >LOVE</span></div>
+                        <div class="twoborder"><span style="color:blue;" class="val" ><i class="fa fa-heart"></i>
+                        </span><br>
+                    <span class="head"
+                     >WOW</span></div>
+                        <div class="twoborder"><span class="val" ><i class="fa fa-star"></i>
+                             </span><br>
+                    <span class="head"
+                    >HAHA</span></div></div></td>
+      </tr>    </table></td></tr>
+
+
+
+
+
+
+
+      <tr style="width:100%;height:300px;">
+        <td style="width:100%;height:100%;">
+          <table style="width:100%;height:100%;"><tr style="width:100%;height:100%;">
+        <td style="width:30%;height:100%;">
+         <div id="stackedRad" style="width:100%;height:100%;"></div></td>
+        <td style="width:30%;height:300px;">
+         <div id="pieContainer" style="width:100%; height:100%;"></div></td>
+         <td style="width:40%;height:100%;">
+         <div id="columnwithline" style="width:100%; height:100%;"></div></td>
+       </tr>      </table></td></tr>
+
+       <tr style="width:100%;height:200px;">
+        <td style="width:100%;height:200px;">
+          <table style="width:100%;height:200px;"><tr style="width:100%;height:200px;">
+        <td style="width:30%;height:200px;">
+         
+         <div id="columnBar" style="width:100%; height:300px;display:inline-block;"></div></td>
+         <td style="width:60%;height:200px;">
+            <table id="newGrid" style="width:60%;height:200px;"><tr><td></td></tr></table>
+<div id="pager"></div>
+    </td>
+       </tr>       </table></td></tr>
+       
+ </table>
+ <script type='text/JavaScript' src='d3Gauge.js'></script>
+ <script type='text/JavaScript' src='columnBar.js'></script>
+ <script type='text/JavaScript' src='pieChart.js'></script>
+ <script type='text/JavaScript' src='columnwithline.js'></script>
+ <script type='text/JavaScript' src='stackedRad.js'></script>
+ <script type='text/JavaScript' src='horiBar.js'></script>
+ <script type='text/JavaScript' src='grid.js'></script>
+  </body>
+</html>

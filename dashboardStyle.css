@@ -1,0 +1,46 @@
+.gaugeBackground {
+    fill: #ddd;
+  }
+  .containerBox ,.containerBoxTwo{
+      
+     display : flex;
+     flex-wrap: wrap;
+ }
+ 
+ 
+ .containerBox > div {
+     flex: 1;
+ }
+ .containerBoxTwo >div{
+    
+    
+    text-align:center;
+
+    flex: 1;
+     border-radius:7px;
+ }
+ .val{
+   font-size:3vw;
+   font-family:'arial';
+   margin-left:2px !important;
+ }
+ .twoborder{
+     border-radius:7px ;
+    border:1px solid gray;
+    margin:7px 10px 10px 10px ;
+  }
+ .oneborder
+ {
+   border-left:3px solid #c2c2c2;}
+ .head
+ {
+   font-family:'arial';
+   margin-bottom:3px;
+    font-size:0.7em;
+    color:grey;
+    margin-left:2px !important;
+ }
+ .container > span {
+   margin:2px;padding:2px;
+ }
+ 
